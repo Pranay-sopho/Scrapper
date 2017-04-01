@@ -1,0 +1,17 @@
+/**
+ * styles.css
+ *
+ * Project_1
+ *
+ * Global CSS.
+ */
+
+body {
+	background-color: dodgerblue;
+}
+
+.url-form {
+    margin-top: 150px;
+    margin-left: 400px;
+}
+

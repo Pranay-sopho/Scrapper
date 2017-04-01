@@ -49,4 +49,15 @@
         }
     }
     
+    function cname_scrapper($url) {
+        
+        $cname = file_get_contents($url);
+    
+        if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i', $cname, $matches)){
+            return $matches;
+        } else {
+            echo "Failed to parse";
+        }
+    }
+    
 ?>

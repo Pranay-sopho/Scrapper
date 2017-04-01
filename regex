@@ -1,0 +1,4 @@
+college name = /<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i
+college address = /<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">[^<]+<\/a>[^\<]<p>\|\s([^<]+)<\/p><\/h2>/i
+facilities = /<div class="srpHoverCntnt2">[^<]*<h3>([^<]*)<\/h3>/i
+reviews = /<div class="tuple-revw-sec">[^<]+<span>[^<]*<b>([\w]*)<\/b><a target="_blank" type="reviews" href="[^"]*"> Reviews<\/a><\/span>/i
