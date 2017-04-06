@@ -49,12 +49,19 @@
         }
     }
     
-    function cname_scrapper($url) {
-        
-        $cname = file_get_contents($url);
+    function college_scrapper($url) {
+        $college = file_get_contents($url);
     
-        if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i', $cname, $matches)){
+        if(preg_match_all('/<div class="clg-tpl-parent">((?:.|\n)*?)<section class="tuple-bottom">/i', $college, $matches, PREG_SET_ORDER)){
             return $matches;
+        } else {
+            echo "Failed to parse";
+        }
+    }
+    
+    function cname_scrapper($data) {
+        if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i', $data, $cname)){
+            return $cname;
         } else {
             echo "Failed to parse";
         }

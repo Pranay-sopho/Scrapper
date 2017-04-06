@@ -21,13 +21,16 @@
         else
         {
             $url = $_POST["url"];
-            $cnames = cname_scrapper($url);
-            $result = cname_insert($cnames);
-            if($result){
-                echo "Well Done";
-            }
-            else {
-                echo "Not Done";
+            $colleges = college_scrapper($url);
+            foreach ($colleges as $college)
+            {
+                $cname = cname_scrapper($college[0]);
+                //$caddress = caddress_scrapper($college[0]);
+                //$creview = creview_scrapper($college[0]);
+                echo $cname[0];
+                //echo $creview[0];
+                //echo $caddress[0];
+                //cname_insert($cname[0]);
             }
         }
     }
