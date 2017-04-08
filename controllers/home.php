@@ -25,12 +25,10 @@
             foreach ($colleges as $college)
             {
                 $cname = cname_scrapper($college[0]);
-                //$caddress = caddress_scrapper($college[0]);
-                //$creview = creview_scrapper($college[0]);
-                echo $cname[0];
-                //echo $creview[0];
-                //echo $caddress[0];
-                //cname_insert($cname[0]);
+                $caddress = caddress_scrapper($college[0]);
+                $creview = creview_scrapper($college[0]);
+                $cfacilities = cfacilities_scrapper($college[0]);
+                //cname_insert($cname);
             }
         }
     }

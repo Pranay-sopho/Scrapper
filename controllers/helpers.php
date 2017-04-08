@@ -61,7 +61,32 @@
     
     function cname_scrapper($data) {
         if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i', $data, $cname)){
-            return $cname;
+            return $cname[1];
+        } else {
+            echo "Failed to parse";
+        }
+    }
+    
+    function caddress_scrapper($data) {
+        if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">[^<]+<\/a>[^\<]<p>\|\s([^<]+)<\/p><\/h2>/i', $data, $caddress)){
+            return $caddress[1];
+        } else {
+            echo "Failed to parse";
+        }
+    }
+    
+    function creview_scrapper($data) {
+        if(preg_match('/<div class="tuple-revw-sec">[^<]+<span>[^<]*<b>([\w]*)<\/b><a target="_blank" type="reviews" href="[^"]*"> Reviews<\/a><\/span>/i', $data, $creview)){
+            return $creview[1];
+        } else {
+            return 0;
+        }
+    }
+    
+    function cfacilities_scrapper($data) {
+        if(preg_match_all('/<div class="srpHoverCntnt2">[^<]*<h3>([^<]*)<\/h3>/i', $data, $cfacilities)){
+            $facilities = implode(", ", $cfacilities[1]);
+            return $facilities;
         } else {
             echo "Failed to parse";
         }
