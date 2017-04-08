@@ -71,7 +71,7 @@
         if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">[^<]+<\/a>[^\<]<p>\|\s([^<]+)<\/p><\/h2>/i', $data, $caddress)){
             return $caddress[1];
         } else {
-            echo "Failed to parse";
+            return "Address Not Provided";
         }
     }
     
@@ -88,7 +88,7 @@
             $facilities = implode(", ", $cfacilities[1]);
             return $facilities;
         } else {
-            echo "Failed to parse";
+            return "Facilities data not available";
         }
     }
     

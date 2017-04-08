@@ -28,7 +28,7 @@
                 $caddress = caddress_scrapper($college[0]);
                 $creview = creview_scrapper($college[0]);
                 $cfacilities = cfacilities_scrapper($college[0]);
-                //cname_insert($cname);
+                cdata_insert($cname, $caddress, $creview, $cfacilities);
             }
         }
     }
