@@ -4,23 +4,18 @@
     require("config.php");
     require_once('../models/models.php');
 
-    // if user reached page via GET (as by clicking a link or via redirect)
-    if ($_SERVER["REQUEST_METHOD"] == "GET")
-    {
-        // else render form
-        render("url.php", ["title" => "Home"]);
-    }
-
-    // else if user reached page via POST (as by submitting a form via POST)
-    else if ($_SERVER["REQUEST_METHOD"] == "POST")
-    {
-        if (empty($_POST["url"]))
+    
+        if (empty($_GET["url"]))
         {
-            echo "Please enter valid url";
+            http_response_code(400);
+            exit;
         }
         else
         {
-            $url = $_POST["url"];
+            header("Content-type: application/json");
+            $url = $_GET["url"];
+            $nex = next_page($url);
+            $next = array("next" => $nex);
             $colleges = college_scrapper($url);
             foreach ($colleges as $college)
             {
@@ -30,7 +25,7 @@
                 $cfacilities = cfacilities_scrapper($college[0]);
                 cdata_insert($cname, $caddress, $creview, $cfacilities);
             }
+            print(json_encode($next, JSON_PRETTY_PRINT));
         }
-    }
 
 ?>

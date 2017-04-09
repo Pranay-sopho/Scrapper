@@ -6,8 +6,8 @@
  * Global CSS.
  */
 
-body {
-	background-color: dodgerblue;
+* {
+    box-sizing: border-box;
 }
 
 .url-form {
@@ -15,3 +15,20 @@ body {
     margin-left: 400px;
 }
 
+.loader {
+    height: 10px;
+    width: 10px;
+}
+
+.show {
+    display: block;
+}
+
+#result {
+    margin-left: 150px;
+    
+}
+
+.hide {
+    display: none;
+}

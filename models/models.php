@@ -5,10 +5,10 @@
         $query = 'INSERT INTO college_info(college, address, facilities, reviews) VALUES'.'("'.$name.'","'.$address.'","'.$facilities.'","'.$review.'")';
         if (mysqli_query($con,$query))
         {
-            echo "Done";
+            return true;
         }
         else {
-            echo "dsafasdf";
+            return false;
         }
     }
 

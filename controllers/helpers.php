@@ -59,6 +59,16 @@
         }
     }
     
+    function next_page($url) {
+        $data = file_get_contents($url);
+    
+        if(preg_match('/<li class="next linkpagination">/', $data)){
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    
     function cname_scrapper($data) {
         if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i', $data, $cname)){
             return $cname[1];
