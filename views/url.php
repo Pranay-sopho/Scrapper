@@ -4,9 +4,9 @@
         <button id="js-button" type="submit">Submit</button>
     </form>
 </div>
-<div id="loader" class="loader hide">
+<div id="loader">
     <img src="loader.gif" alt="Scrapping Data ...">
 </div>
-<div class="hide" id="result">
+<div id="result">
     <a href="display.php">Show result</a>
 </div>

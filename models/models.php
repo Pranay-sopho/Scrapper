@@ -34,5 +34,19 @@
             return $college_data;
         }
     }
+    
+    function empty_data() {
+        require('connect.php');
+        $query = 'TRUNCATE TABLE college_info';
+        $result = mysqli_query($con, $query);
+        if ($result)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
 ?>

@@ -15,21 +15,14 @@
     margin-left: 400px;
 }
 
-.loader {
+#loader {
     height: 10px;
     width: 10px;
-}
-
-.show {
-    display: block;
+    display: none;
 }
 
 #result {
     margin-left: 150px;
-    
-}
-
-.hide {
     display: none;
 }
 

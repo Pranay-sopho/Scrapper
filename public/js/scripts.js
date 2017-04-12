@@ -9,8 +9,9 @@
  */
 
 $(document).ready(function() {
+    $("#url").on('input', emptydata());
     $(".url-form").submit(function(e) {
-        $("#loader").removeClass('hide').addClass('show');
+        $("#loader").css('display', 'block');
         e.preventDefault();
         var urlr = $("#url").val();
         var url = $("#url").val();
@@ -36,10 +37,27 @@ function getdata(urlr, url, page) {
                 }
                 else
                 {
-                    $("#loader").removeClass('show').addClass('hide');
-                    $("#result").removeClass('hide').addClass('show');
+                    $("#loader").css('display', 'none');
+                    $("#result").css('display', 'block');
                     return false;
                 }
             }
         });
+}
+
+function emptydata() {
+    $.ajax({
+        url: 'empty.php',
+        async: false,
+        success: function(data) {
+            if (data.empty)
+            {
+                console.log('Successfull');
+            }
+            else
+            {
+                console.log('Failed');
+            }
+        }
+    });
 }
