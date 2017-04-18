@@ -13,8 +13,10 @@ $(document).ready(function() {
     $(".url-form").submit(function(e) {
         $("#loader").css('display', 'block');
         e.preventDefault();
-        var urlr = $("#url").val();
         var url = $("#url").val();
+        var regex = /(http:\/\/www\.shiksha\.com\/b-tech\/colleges\/b-tech-colleges-[^\d]*[^\d\-])(?=-\d.*)?/i;
+        var urld = regex.exec(url);
+        var urlr = urld[1];
         var page = 1;
         getdata(urlr, url, page);
     });
