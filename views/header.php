@@ -10,11 +10,13 @@
         <script type="text/javascript" src="js/scripts.js"></script>
     </head>
     <body>
-    	<nav class="navbar navbar-inverse navbar-fixed-top">
-    	    <div class="container-fluid">
-                <div class="navbar-header">
-                    <a class="navbar-brand" href="index.php">Home</a>
+        <div>
+            <nav class="navbar navbar-inverse navbar-fixed-top">
+        	    <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="index.php">Home</a>
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
+        </div>
         
