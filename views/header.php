@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
+        
+        <?php if (isset($title)): ?>
+            <title><?= htmlspecialchars($title) ?></title>
+        <?php else: ?>
+            <title>Scrapper</title>
+        <?php endif ?>
+        
         <meta charset="utf-8">
 	    <meta name="description" content="Web Scrapper">
 	    <link href="/css/bootstrap.min.css" rel="stylesheet"/>

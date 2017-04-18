@@ -1,0 +1,21 @@
+About the Project:
+    Website contains 2 pages, one to take input other to display results.
+    Enter URL in input and use Enter on keyboard to submit the url.
+    Loading icon will appear.
+    Wait for it to disappear and click on link shown to view results.
+    For invalid url error modal pops up.
+    
+About the structure of files:
+    Controllers contain all the major php files that are involved in scrapping and calling functions to send and receive data to and from database
+    and send the data to display.
+    Models contains all database related queries.
+    public contains js and css files.
+    Views contains files to render received data to user.
+    
+Instructions to run on ide:
+    Start Server with following command:
+        apache50 start ~/workspace/Project_1/public/
+    Next start database server:
+        mysql50 start
+    Go to:
+        https://ide50-enigma04.cs50.io/
