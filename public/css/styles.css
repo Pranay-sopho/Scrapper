@@ -30,7 +30,7 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('download.png');
+    background-image: url('../img/search.png');
     background-position: 2px 5px; 
     background-size: 35px 35px;
     background-repeat: no-repeat;

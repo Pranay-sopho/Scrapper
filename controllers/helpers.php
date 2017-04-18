@@ -49,6 +49,9 @@
         }
     }
     
+    /**
+     * Scrapes the data to output data of individual colleges
+     */
     function college_scrapper($url) {
         $college = file_get_contents($url);
     
@@ -59,6 +62,9 @@
         }
     }
     
+    /**
+     * Checks if next page of colleges exist
+     */
     function next_page($url) {
         $data = file_get_contents($url);
     
@@ -69,6 +75,9 @@
         }
     }
     
+    /**
+     * Scrapes the name of college from data of particular college.
+     */
     function cname_scrapper($data) {
         if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">([^<]+)<\/a>/i', $data, $cname)){
             return $cname[1];
@@ -77,6 +86,9 @@
         }
     }
     
+    /**
+     * Scrapes the address of college from data of particular college.
+     */
     function caddress_scrapper($data) {
         if(preg_match('/<h2 class="tuple-clg-heading"><a href="[^"]+" target="[^"]+">[^<]+<\/a>[^\<]<p>\|\s([^<]+)<\/p><\/h2>/i', $data, $caddress)){
             return $caddress[1];
@@ -85,6 +97,9 @@
         }
     }
     
+    /**
+     * Scrapes reviews of college from data of particular college.
+     */
     function creview_scrapper($data) {
         if(preg_match('/<div class="tuple-revw-sec">[^<]+<span>[^<]*<b>([\w]*)<\/b><a target="_blank" type="reviews" href="[^"]*"> Reviews<\/a><\/span>/i', $data, $creview)){
             return $creview[1];
@@ -93,6 +108,9 @@
         }
     }
     
+    /**
+     * Scrapes facilities of college from data of particular college.
+     */
     function cfacilities_scrapper($data) {
         if(preg_match_all('/<div class="srpHoverCntnt2">[^<]*<h3>([^<]*)<\/h3>/i', $data, $cfacilities)){
             $facilities = implode(", ", $cfacilities[1]);

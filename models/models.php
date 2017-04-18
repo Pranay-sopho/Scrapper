@@ -1,5 +1,6 @@
 <?php
-
+    
+    // inserts the data into database.
     function cdata_insert($name, $address, $review, $facilities) {
         require('connect.php');
         $query = 'INSERT INTO college_info(college, address, facilities, reviews) VALUES'.'("'.$name.'","'.$address.'","'.$facilities.'","'.$review.'")';
@@ -12,6 +13,7 @@
         }
     }
     
+    // retrieves the data from database.
     function get_data() {
         require('connect.php');
         $query = 'SELECT * FROM college_info';
@@ -35,6 +37,7 @@
         }
     }
     
+    // empty all the entries from database.
     function empty_data() {
         require('connect.php');
         $query = 'TRUNCATE TABLE college_info';
